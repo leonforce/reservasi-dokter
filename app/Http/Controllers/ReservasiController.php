@@ -3,20 +3,32 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use phpDocumentor\Reflection\Types\Integer;
 
 class ReservasiController extends Controller
 {
 
-    private function checkdataakhir($tanggal){
+    private function checkdataakhir($tanggal)
+    {
 
+        if (today()->toDateString() !== $tanggal) {
+            return false;
+        }
+        return true;
     }
+
     public function index()
     {
-        $lastantri = "2022-01-28";
-        $today = today()->toDateString();
-        if ($today !== $lastantri){
-            echo "kampret";
+
+        if (!$this->checkdataakhir("2022-01-22")) {
+            $maxjumlahantri = 20;
+        } else {
+//            ISI ANTRIAN
         }
-        echo "sjot";
+        $data = [
+            'nama' => 'yudha',
+            'jumlah' => $maxjumlahantri,
+        ];
+        dd($data);
     }
 }
