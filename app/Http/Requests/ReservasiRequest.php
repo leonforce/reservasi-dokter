@@ -24,7 +24,10 @@ class ReservasiRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'nama' => 'required|max:255',
+            'notelp' => 'required|',
+            'alamat' => 'required|',
+            'jenis' => 'required|'
         ];
     }
 }

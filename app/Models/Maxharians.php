@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Maxharians extends Model
 {
+    protected $table = 'maxharians';
     use HasFactory;
 }

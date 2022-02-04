@@ -8,4 +8,5 @@ use Illuminate\Support\Facades\Route;
 //    return view('welcome');
 //});
 
-Route::get('/',[ReservasiController::class, 'index']);
+Route::get('/',[ReservasiController::class, 'index'])->name('home');
+Route::post('/',[ReservasiController::class, 'store'])->name('simpan');
